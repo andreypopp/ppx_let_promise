@@ -1,0 +1,10 @@
+{
+  "name": "ppx_let_promise",
+  "version": "1.0.0",
+  "description": "ppx_let bindings for BuckleScript's Js.Promise.t",
+  "author": "Andrey Popp",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-platform": "^1.8.0"
+  }
+}
