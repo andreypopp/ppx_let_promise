@@ -21,10 +21,11 @@ Add to `bsconfig.json`:
 
 Use `ppx_let` with `Js.Promise.t`:
 ```ocaml
-open Ppx_let_promise;;
-
+(* module with a name Let_syntax should be in scope (see ppx_let docs) *)
+module Let_syntax = Ppx_let_promise
 
 let hello () =
+  (* This line "wait" for promise to resolve and binds to it result value *)
   let%bind message = Js.Promise.resolve "Hello!" in
   print_endline message;
   Js.Promise.resolve ();;
