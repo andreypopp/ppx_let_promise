@@ -20,6 +20,15 @@ Add to `bsconfig.json`:
     }
 
 Use `ppx_let` with `Js.Promise.t`:
+```ocaml
+open Ppx_let_promise;;
 
-    let%bind message = Js.Promise.resolve "Hello!" in
-    print_endline message
+
+let hello () =
+  let%bind message = Js.Promise.resolve "Hello!" in
+  print_endline message;
+  Js.Promise.resolve ();;
+
+hello ();
+
+```
