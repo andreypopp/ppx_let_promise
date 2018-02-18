@@ -25,7 +25,7 @@ Use `ppx_let` with `Js.Promise.t`:
 module Let_syntax = Ppx_let_promise.Let_syntax
 
 let hello () =
-  (* This line "wait" for promise to resolve and binds to it result value *)
+  (* This line "waits" for promise to resolve and binds to its result value *)
   let%bind message = Js.Promise.resolve "Hello!" in
   print_endline message;
   Js.Promise.resolve ();;
