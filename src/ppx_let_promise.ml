@@ -5,9 +5,7 @@ let bind promise f =
   Js.Promise.then_ f promise
 
 let both promise_a promise_b =
-  let on_b a b = Js.Promise.resolve (a, b) in
-  let on_a a = Js.Promise.then_ (on_b a) promise_b in
-  Js.Promise.then_ on_a promise_a
+  Js.Promise.all2 (promise_a, promise_b)
 
 let return =
   Js.Promise.resolve
